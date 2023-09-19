@@ -9,7 +9,7 @@ const AdminPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [hotelName, setHotelName] = useState("");
   const [hotelList, setHotelList] = useState([]);
-  const [editedHotel, setEditedHotel] = useState(null); // Nuevo estado para rastrear el hotel en edición
+  const [editedHotel, setEditedHotel] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -24,7 +24,6 @@ const AdminPage = () => {
 
   const handleHotelSubmit = () => {
     if (editedHotel) {
-      // Editar el hotel existente
       const updatedHotelList = hotelList.map((hotel) => {
         if (hotel.id === editedHotel.id) {
           return { ...hotel, name: hotelName };
@@ -34,10 +33,9 @@ const AdminPage = () => {
 
       localStorage.setItem("hotelList", JSON.stringify(updatedHotelList));
       setHotelList(updatedHotelList);
-      setEditedHotel(null); // Salir del modo de edición
-      setHotelName(""); // Limpiar el campo de entrada
+      setEditedHotel(null);
+      setHotelName("");
     } else if (hotelName.trim() !== "") {
-      // Agregar un nuevo hotel
       const newHotel = { id: Date.now(), name: hotelName };
       const updatedHotelList = [newHotel, ...hotelList];
 
@@ -50,8 +48,8 @@ const AdminPage = () => {
   const handleEdit = (hotelId) => {
     const hotelToEdit = hotelList.find((hotel) => hotel.id === hotelId);
     if (hotelToEdit) {
-      setEditedHotel(hotelToEdit); // Establecer el hotel en edición
-      setHotelName(hotelToEdit.name); // Llenar el campo de entrada con el nombre actual del hotel
+      setEditedHotel(hotelToEdit);
+      setHotelName(hotelToEdit.name);
     }
   };
 
@@ -87,12 +85,11 @@ const AdminPage = () => {
             </button>
           </div>
 
-        
           <HotelList
             initialHotelList={hotelList}
             onEdit={handleEdit}
             onDelete={handleDelete}
-            isAdminPage={true} // O puedes usar una variable o estado para gestionarlo
+            isAdminPage={true}
           />
         </div>
       </div>

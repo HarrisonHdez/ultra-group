@@ -16,14 +16,11 @@ function Acceso() {
 
   return (
     <main>
-
       <div className="form">
-
-        
         <form onSubmit={handleSubmit} className="form__content">
-        <div className="form__title">
-          <h2>Iniciar sesion </h2>
-        </div>
+          <div className="form__title">
+            <h2>Iniciar sesion </h2>
+          </div>
           <input
             className="form__input"
             type="email"
@@ -38,7 +35,9 @@ function Acceso() {
             placeholder="Contraseña"
             required
           />
-          <button  className="form__button" type="submit">Iniciar sesión</button>
+          <button className="form__button" type="submit">
+            Iniciar sesión
+          </button>
         </form>
       </div>
     </main>

@@ -17,8 +17,18 @@ const HotelList = ({ initialHotelList, onEdit, onDelete, isAdminPage }) => {
             <h3 className="card__hotel">{hotel.name}</h3>
             {isAdminPage && (
               <div className="card__buttons">
-                <button className="card__editar" onClick={() => onEdit(hotel.id)}>Editar</button>
-                <button className="card__eliminar" onClick={() => onDelete(hotel.id)}>Eliminar</button>
+                <button
+                  className="card__editar"
+                  onClick={() => onEdit(hotel.id)}
+                >
+                  Editar
+                </button>
+                <button
+                  className="card__eliminar"
+                  onClick={() => onDelete(hotel.id)}
+                >
+                  Eliminar
+                </button>
               </div>
             )}
           </div>
@@ -29,5 +39,3 @@ const HotelList = ({ initialHotelList, onEdit, onDelete, isAdminPage }) => {
 };
 
 export default HotelList;
-
-

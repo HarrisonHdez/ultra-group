@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -14,7 +15,7 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
     <nav className="nav">
       <div className="nav__content container">
         <a className="nav__logo" href="/">
-          <img src="svg/logo.svg" alt="logo ultra group" />
+          <Image width={180} height={40} src="svg/logo.svg" alt="logo ultra group" />
         </a>
 
         <div className={`nav__links ${isOpen ? "mobile__menu" : ""}`}>
@@ -29,7 +30,7 @@ const Navbar = ({ isLoggedIn, handleLogout }) => {
             <button className="nav__close" onClick={handleLogout}>Cerrar sesión</button>
           ) : (
             <Link href="/acceso">
-              <img
+              <Image
                 width={20}
                 height={20}
                 src="svg/account.svg"

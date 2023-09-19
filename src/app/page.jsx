@@ -52,12 +52,13 @@ export default function Home() {
             </div>
           </div>
           <div className="home__image">
-            <img
+            <Image
              
               width={500}
               height={500}
-              src="/image/banner3.png"
+              src="/image/banner.png"
               alt="team"
+              priority={true}
               className="animate__animated animate__fadeIn"
             />
           </div>
