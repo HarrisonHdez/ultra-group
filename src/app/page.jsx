@@ -6,7 +6,7 @@ import HotelList from "@/components/HotelList";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [hotelList, setHotelList] = useState([]); 
+  const [hotelList, setHotelList] = useState([]);
 
   useEffect(() => {
     const storedHotelList = JSON.parse(localStorage.getItem("hotelList")) || [];
@@ -53,7 +53,6 @@ export default function Home() {
           </div>
           <div className="home__image">
             <Image
-             
               width={500}
               height={500}
               src="/image/banner.png"
