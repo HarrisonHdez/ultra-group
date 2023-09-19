@@ -352,7 +352,7 @@ a {
 }
 .form__content {
   max-width: 500px;
-  width: 100%;
+  width: 90%;
   min-height: 500px;
   display: flex;
   flex-direction: column;
